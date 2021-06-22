@@ -46,7 +46,7 @@
 		</data>
 		<key>Headers/MSIMElem.h</key>
 		<data>
-		KFjAxtCK4AQmNbaOty8SOZEOq6A=
+		sTaSS3bdZ9V9tD44Z9JBkXorB/U=
 		</data>
 		<key>Headers/MSIMErrorCode.h</key>
 		<data>
@@ -58,7 +58,7 @@
 		</data>
 		<key>Headers/MSIMKit.h</key>
 		<data>
-		qk6ogWcckjb8co7dOmaO/Ss40Co=
+		GAS+g5WPPuFL9A1W1vTK4/lnvLc=
 		</data>
 		<key>Headers/MSIMManager+Conversation.h</key>
 		<data>
@@ -130,7 +130,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		uYNRyEEVYZye59L0n6eyvTiOWj0=
+		JHWCYvTN9/b7eVc07G945WgMLTc=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -253,11 +253,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			KFjAxtCK4AQmNbaOty8SOZEOq6A=
+			sTaSS3bdZ9V9tD44Z9JBkXorB/U=
 			</data>
 			<key>hash2</key>
 			<data>
-			CNjb/Z16GqM9oh1aqLVi9uPV4UXQq9hB2KmxKcp5HY0=
+			366bsbCI5TJtkr1jS+Z2YTIoHT6N+rdJErFZIvFHS2w=
 			</data>
 		</dict>
 		<key>Headers/MSIMErrorCode.h</key>
@@ -286,11 +286,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			qk6ogWcckjb8co7dOmaO/Ss40Co=
+			GAS+g5WPPuFL9A1W1vTK4/lnvLc=
 			</data>
 			<key>hash2</key>
 			<data>
-			GA2dzxaA5M1zqmLBkPVFje88NfjNAGdY79AweQrMJvk=
+			UyNACF5pcpt9qO8NLf8L3R9hd+9apV3Ss+JxpP8FT2o=
 			</data>
 		</dict>
 		<key>Headers/MSIMManager+Conversation.h</key>

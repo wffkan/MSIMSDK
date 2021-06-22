@@ -52,10 +52,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (NSString *)partner_id;
 
-/** 在会话列表中显示的文字*/
-@property(nonatomic,copy,readonly) NSString *displayStr;
-
-
 @end
 
 /////////////////////////////////////////////////////////////////////////////////

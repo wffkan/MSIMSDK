@@ -16,7 +16,7 @@ typedef void (^profileBlock)(MSProfileInfo * __nullable profile);
 @interface MSProfileProvider : NSObject
 
 ///单例
-+ (instancetype)provider;
++ (instancetype)provider NS_SWIFT_NAME(shared());
 
 
 /// 查询某个用户的个人信息

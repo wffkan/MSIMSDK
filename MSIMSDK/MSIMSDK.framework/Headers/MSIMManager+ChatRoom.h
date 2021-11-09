@@ -85,7 +85,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 发送成功
 /// 发送失败
 - (void)muteMembers:(NSString *)room_id
-               uids:(NSArray<NSString *> *)uids
+               uids:(NSArray<NSNumber *> *)uids
            duration:(NSInteger)duration
              reason:(nullable NSString *)reason
           successed:(MSIMSucc)success
@@ -100,7 +100,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 发送成功
 /// 发送失败
 - (void)editChatroomManagerAccess:(NSString *)room_id
-                             uids:(NSArray<NSString *> *)uids
+                             uids:(NSArray<NSNumber *> *)uids
                          duration:(NSInteger)duration
                            reason:(nullable NSString *)reason
                         successed:(MSIMSucc)success

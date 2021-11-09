@@ -64,7 +64,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,copy) NSString *room_id;
 
 /** 聊天室名称 */
-@property(nonatomic,copy) NSString *room_name;
+@property(nonatomic,copy,nullable) NSString *room_name;
 
 /** 聊天室最大同时在线人数*/
 @property(nonatomic,assign) NSInteger max_count;
@@ -76,7 +76,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong) NSArray<MSGroupMemberItem *> *members;
 
 /** 操作原因（ 禁言 / 指派管理员等某些操作时可能附带该信息）*/
-@property(nonatomic,copy) NSString *reason;
+@property(nonatomic,copy,nullable) NSString *reason;
 
 //0：聊天室被销毁（所有用户被迫离开聊天室）
 //1：聊天室信息修改，（名称，容纳上限，是否全体禁言）
@@ -85,7 +85,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,assign) NSInteger eventType;
 
 //提示性小字
-@property(nonatomic,strong) MSGroupTipEvent *tips;
+@property(nonatomic,strong,nullable) MSGroupTipEvent *tips;
 
 /** 我是否具备修改tips of day（公告）的权限*/
 @property(nonatomic,assign) BOOL action_tod;
@@ -115,7 +115,7 @@ NS_ASSUME_NONNULL_BEGIN
 /** 是否被禁言*/
 @property(nonatomic,assign) BOOL is_mute;
 
-@property(nonatomic,strong,readonly) MSProfileInfo *profile;
+@property(nonatomic,strong,readonly,nullable) MSProfileInfo *profile;
 
 @end
 

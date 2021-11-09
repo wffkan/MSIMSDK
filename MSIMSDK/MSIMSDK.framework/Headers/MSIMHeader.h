@@ -37,6 +37,9 @@
 //收到对方消息已读的通知
 #define MSUIKitNotification_MessageReceipt @"MSUIKitNotification_MessageReceipt"
 
+//收到一条消息被删除的通知
+#define MSUIKitNotification_MessageRecieveDelete @"MSUIKitNotification_MessageRecieveDelete"
+
 //用户信息更新通知
 #define MSUIKitNotification_ProfileUpdate @"MSUIKitNotification_ProfileUpdate"
 

@@ -45,6 +45,16 @@ NS_ASSUME_NONNULL_BEGIN
                     successed:(void(^)(NSInteger msg_id))success
                        failed:(MSIMFail)failed;
 
+/// 聊天室中请求撤回某一条消息
+/// @param room_id 聊天室id
+/// @param msg_id 消息的唯一ID
+/// @param success 撤回成功
+/// @param failed 撤回失败
+- (void)chatRoomRevokeMessage:(NSInteger)msg_id
+                   fromRoomID:(NSString *)room_id
+                    successed:(MSIMSucc)success
+                       failed:(MSIMFail)failed;
+
 
 /// 聊天室所有的群成员
 /// @param room_id 聊天室id

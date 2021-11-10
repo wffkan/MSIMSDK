@@ -103,6 +103,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// 收到新消息（除了信令消息）
 - (void)onNewChatRoomMessages:(NSArray<MSIMElem *> *)msgs;
 
+///收到一条对方撤回的消息
+- (void)onChatroomRevokeMessage:(MSIMElem *)elem;
 
 /**
  *  消息发送状态变化通知

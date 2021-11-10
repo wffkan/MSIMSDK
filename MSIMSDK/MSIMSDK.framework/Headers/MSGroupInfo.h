@@ -26,6 +26,9 @@ NS_ASSUME_NONNULL_BEGIN
 /** 聊天室最大同时在线人数*/
 @property(nonatomic,assign) NSInteger max_count;
 
+/** 公告 只记录最近的一条*/
+@property(nonatomic,copy,nullable) NSString *intro;
+
 /** 是否全体禁言*/
 @property(nonatomic,assign) BOOL is_mute;
 

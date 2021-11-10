@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/IMSDKConfig.h</key>
 		<data>
-		rWMK9U4MRchOFocxiPO9bW20agU=
+		ZdvW49x+XpQdJQMm3aoES2+b7bI=
 		</data>
 		<key>Headers/MSCacheProvider.h</key>
 		<data>
@@ -42,7 +42,7 @@
 		</data>
 		<key>Headers/MSGroupInfo.h</key>
 		<data>
-		880elk6SAFNd+OaAsIvRhtv9F4M=
+		mMAvN/zUHHC9W3sIcw7hGpm7xdE=
 		</data>
 		<key>Headers/MSIMConst.h</key>
 		<data>
@@ -155,11 +155,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			rWMK9U4MRchOFocxiPO9bW20agU=
+			ZdvW49x+XpQdJQMm3aoES2+b7bI=
 			</data>
 			<key>hash2</key>
 			<data>
-			+idJUOZ+kwq5nz745WCvRJRW20Toq4XFnH8wjj++S68=
+			4YMYxctOhi7ivuLHj21okipUM3DPJx8GZbmuqi+vc9A=
 			</data>
 		</dict>
 		<key>Headers/MSCacheProvider.h</key>
@@ -254,11 +254,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			880elk6SAFNd+OaAsIvRhtv9F4M=
+			mMAvN/zUHHC9W3sIcw7hGpm7xdE=
 			</data>
 			<key>hash2</key>
 			<data>
-			O2wM1oebAZZR67L3q9psR/gCa0sFuL8DNLwHiN07Ob8=
+			XY0SZwLxOpNVNYs6qaUrME4YyhwLdwQsNPDVHY5kUsc=
 			</data>
 		</dict>
 		<key>Headers/MSIMConst.h</key>

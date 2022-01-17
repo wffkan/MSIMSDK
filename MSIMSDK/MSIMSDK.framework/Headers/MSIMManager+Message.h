@@ -45,6 +45,12 @@ typedef void (^BFIMMessageListSucc)(NSArray<MSIMElem *> * msgs,BOOL isFinished);
  */
 - (MSIMLocationElem *)createLocationMessage:(MSIMLocationElem *)elem;
 
+
+/** 创建自定义表情消息
+ */
+- (MSIMEmotionElem *)createEmotionMessage:(MSIMEmotionElem *)elem;
+
+
 /** 创建自定义消息,如果不走推送，pushExt字段可以传nil */
 - (MSIMCustomElem *)createCustomMessage:(NSString *)jsonStr option:(MSIMCustomOption)option pushExt:(nullable MSIMPushInfo *)pushExt;
 

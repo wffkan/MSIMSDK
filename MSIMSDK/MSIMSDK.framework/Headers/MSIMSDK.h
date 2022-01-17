@@ -50,6 +50,7 @@ FOUNDATION_EXPORT const unsigned char MSIMSDKVersionString[];
 #import <MSIMSDK/MSDBProfileStore.h>
 
 #import <MSIMSDK/MSIMManager+ChatRoom.h>
+#import <MSIMSDK/MSChatRoomManager.h>
 
 #import <MSIMSDK/MSIMHeader.h>
 #import <MSIMSDK/MSIMKit.h>

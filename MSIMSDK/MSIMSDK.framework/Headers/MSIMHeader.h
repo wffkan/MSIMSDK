@@ -43,6 +43,11 @@
 //用户信息更新通知
 #define MSUIKitNotification_ProfileUpdate @"MSUIKitNotification_ProfileUpdate"
 
+//加入聊天室成功通知
+#define MSUIKitNotification_EnterChatroom_success @"MSUIKitNotification_EnterChatroom_success"
+
+//聊天室信息发生变化通知
+#define MSUIKitNotification_ChatRoomConv_update @"MSUIKitNotification_ChatRoomConv_update"
 
 //聊天室有新聊天室消息通知
 #define MSUIKitNotification_ChatRoom_MessageListener @"MSUIKitNotification_ChatRoom_MessageListener"
@@ -53,7 +58,19 @@
 //收到聊天室对方撤回消息的通知
 #define MSUIKitNotification_ChatroomMessageRecieveRevoke @"MSUIKitNotification_ChatroomMessageRecieveRevoke"
 
+//收到聊天室公告的通知
+#define MSUIKitNotification_ChatroomMessageRecieveTipsOfDay @"MSUIKitNotification_ChatroomMessageRecieveTipsOfDay"
+
+//收到聊天室消息被删除的通知
+#define MSUIKitNotification_ChatRoomMessageRecieveDelete @"MSUIKitNotification_ChatRoomMessageRecieveDelete"
+
 //聊天室事件通知
 #define MSUIKitNotification_ChatRoom_Event @"MSUIKitNotification_ChatRoom_Event"
+
+//聊天室有人进入通知
+#define MSUIKitNotification_ChatRoom_People_enter @"MSUIKitNotification_ChatRoom_People_enter"
+
+//聊天室有人离开通知
+#define MSUIKitNotification_ChatRoom_People_leave @"MSUIKitNotification_ChatRoom_People_leave"
 
 #endif /* MSIMHeader_h */

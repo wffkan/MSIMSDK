@@ -29,13 +29,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(nonatomic,assign) NSInteger gender;
 
-@property(nonatomic,copy) NSString *pic;
-
 @property(nonatomic,copy) NSString *custom;
 
 + (MSProfileInfo *)createWithProto:(Profile *)profile;
-
-+ (MSProfileInfo *)createWithSpark:(Spark *)spark;
 
 @end
 

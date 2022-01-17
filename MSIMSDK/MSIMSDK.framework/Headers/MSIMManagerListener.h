@@ -15,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 @class MSProfileInfo;
 @class MSIMMessageReceipt;
 @class MSGroupEvent;
+@class MSGroupMemberItem;
+@class MSGroupInfo;
 @protocol MSIMSDKListener <NSObject>
 
 @optional
@@ -100,19 +102,35 @@ NS_ASSUME_NONNULL_BEGIN
 
 @required
 
+/// 加入聊天室成功通知
+- (void)onEnterChatRoomSuccess;
+
+///聊天室在会话中展示的信息发生变化通知
+- (void)onChatRoomConvUpdate;
+
 /// 收到新消息（除了信令消息）
 - (void)onNewChatRoomMessages:(NSArray<MSIMElem *> *)msgs;
 
 ///收到一条对方撤回的消息
 - (void)onChatroomRevokeMessage:(MSIMElem *)elem;
 
-/**
- *  消息发送状态变化通知
- */
+/// 收到删除的消息
+- (void)onChatRoomDeleteMessages:(NSArray<NSNumber *> *)msg_ids;
+
+/// 消息发送状态变化通知
 - (void)onChatRoomMessageUpdateSendStatus:(MSIMElem *)elem;
 
 /// 聊天室事件通知
 - (void)onNewChatRoomEvent:(MSGroupEvent *)event;
+
+/// 收到新的聊天室公告
+- (void)onNewChatRoomTipsOfDay:(NSString *)text;
+
+/// 有人进入聊天室通知
+- (void)onPeopleJoinInChatRoom:(MSGroupMemberItem *)member;
+
+/// 有人退出了聊天室通知
+- (void)onPeopleQuitChatRoom:(NSString *)uid;
 
 @end
 

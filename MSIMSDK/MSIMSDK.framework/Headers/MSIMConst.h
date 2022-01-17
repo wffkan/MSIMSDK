@@ -122,7 +122,9 @@ typedef NS_ENUM(NSInteger ,MSIMMessageType){
     
     MSIM_MSG_TYPE_LOCATION = 4,//位置消息
     
-    MSIM_MSG_TYPE_USER_CARD = 6,//用户名片消息
+    MSIM_MSG_TYPE_USER_CARD = 5,//用户名片消息
+    
+    MSIM_MSG_TYPE_EMOTION = 6,//自定义表情
     
     MSIM_MSG_TYPE_REVOKE = 31,//撤回消息
     

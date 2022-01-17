@@ -55,6 +55,11 @@ NS_ASSUME_NONNULL_BEGIN
                     successed:(MSIMSucc)success
                        failed:(MSIMFail)failed;
 
+///标记消息已读
+///last_msg_id 标记这个消息id之前的消息都为已读
+- (void)markChatRoomMessageAsRead:(NSInteger)last_msg_id
+                             succ:(MSIMSucc)succed
+                           failed:(MSIMFail)failed;
 
 /// 聊天室所有的群成员
 /// @param room_id 聊天室id
@@ -128,7 +133,7 @@ NS_ASSUME_NONNULL_BEGIN
                     failed:(MSIMFail)failed;
 
 ///比对update_time与服务器同步更新用户信息
-- (void)synchronizeProfiles:(NSMutableArray<NSNumber *> *)uids room_id:(NSInteger)room_id;
+//- (void)synchronizeProfiles:(NSMutableArray<NSNumber *> *)uids room_id:(NSInteger)room_id;
 
 @end
 

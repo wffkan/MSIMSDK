@@ -11,6 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class MSProfileInfo;
 @interface MSIMElem : NSObject<NSCopying>
 
 /** 聊天类型 单聊 or 群聊*/
@@ -50,10 +51,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(nonatomic,assign) NSInteger block_id;
 
-/** TRUE：表示是发送消息；FALSE：表示是接收消息*/
-- (BOOL)isSelf;
+/** 判断消息所有者是否为自己*/
+@property(nonatomic,assign,readonly) BOOL isSelf;
 
-- (NSString *)partner_id;
+/** 单聊时，partner_id指对方，群聊时指群id*/
+@property(nonatomic,copy,readonly) NSString *partner_id;
+
+/** 消息所有者信息,即消息的发送者 有可能为空*/
+@property(nonatomic,strong,readonly,nullable) MSProfileInfo *owner;
 
 @end
 
@@ -141,6 +146,23 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,assign) NSInteger duration;
 /** 视频上传的进度 0 ~ 1*/
 @property(nonatomic,assign) CGFloat progress;
+
+@end
+
+/////////////////////////////////////////////////////////////////////////////////
+//
+//                      自定义表情消息 Elem
+//
+/////////////////////////////////////////////////////////////////////////////////
+@interface MSIMEmotionElem : MSIMElem
+
+/** 表情id*/
+@property(nonatomic,copy,nonnull) NSString *emotionID;
+/** 表情远程地址*/
+@property(nonatomic,copy,nullable) NSString *emotionUrl;
+/** 表情名称*/
+@property(nonatomic,copy,nullable) NSString *emotionName;
+
 
 @end
 

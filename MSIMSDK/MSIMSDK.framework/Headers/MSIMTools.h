@@ -20,6 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(nonatomic,assign) NSInteger sub_app_id;
 
+@property(nonatomic,assign) NSInteger chatRoomID;
+
 @property(nonatomic,assign,readonly) NSInteger currentLocalTimeInterval;
 
 @property(nonatomic,assign,readonly) NSInteger adjustLocalTimeInterval;

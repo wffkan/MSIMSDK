@@ -30,10 +30,9 @@
 //有指令消息通知
 #define MSUIKitNotification_SignalMessageListener @"MSUIKitNotification_SignalMessageListener"
 
-//消息状态有变更通知
-#define MSUIKitNotification_MessageSendStatusUpdate @"MSUIKitNotification_MessageSendStatusUpdate"
-//收到对方撤回消息的通知
-#define MSUIKitNotification_MessageRecieveRevoke @"MSUIKitNotification_MessageRecieveRevoke"
+//消息有变更通知
+#define MSUIKitNotification_MessageUpdate @"MSUIKitNotification_MessageUpdate"
+
 //收到对方消息已读的通知
 #define MSUIKitNotification_MessageReceipt @"MSUIKitNotification_MessageReceipt"
 
@@ -52,11 +51,8 @@
 //聊天室有新聊天室消息通知
 #define MSUIKitNotification_ChatRoom_MessageListener @"MSUIKitNotification_ChatRoom_MessageListener"
 
-//聊天室消息状态有变更通知
-#define MSUIKitNotification_ChatRoom_MessageSendStatusUpdate @"MSUIKitNotification_ChatRoom_MessageSendStatusUpdate"
-
-//收到聊天室对方撤回消息的通知
-#define MSUIKitNotification_ChatroomMessageRecieveRevoke @"MSUIKitNotification_ChatroomMessageRecieveRevoke"
+//聊天室消息有变更通知
+#define MSUIKitNotification_ChatRoom_MessageUpdate @"MSUIKitNotification_ChatRoom_MessageUpdate"
 
 //收到聊天室公告的通知
 #define MSUIKitNotification_ChatroomMessageRecieveTipsOfDay @"MSUIKitNotification_ChatroomMessageRecieveTipsOfDay"

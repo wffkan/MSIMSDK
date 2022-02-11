@@ -7,7 +7,7 @@
 
 #import <Foundation/Foundation.h>
 #import <MSIMSDK/MSIMConst.h>
-#import <MSIMSDK/MSIMElem.h>
+#import <MSIMSDK/MSIMMessage.h>
 #import <MSIMSDK/MSProfileInfo.h>
 
 
@@ -57,7 +57,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong) MSCustomExt *ext;
 
 ///需要展示的最后一条消息
-@property(nonatomic,strong) MSIMElem *show_msg;
+@property(nonatomic,strong) MSIMMessage *show_msg;
 
 - (NSString *)extString;
 

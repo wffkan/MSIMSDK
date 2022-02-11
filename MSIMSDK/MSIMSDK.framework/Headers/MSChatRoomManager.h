@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @class MSGroupInfo;
-@class MSIMElem;
+@class MSIMMessage;
 @interface MSChatRoomManager : NSObject
 
 
@@ -21,7 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)loginChatRoom:(NSInteger)chatRoom;
 
 /** 缓存的聊天室聊天记录*/
-@property(nonatomic,strong,readonly) NSMutableArray<MSIMElem *> *messages;
+@property(nonatomic,strong,readonly) NSMutableArray<MSIMMessage *> *messages;
 
 @property(nonatomic,assign,readonly) NSInteger unreadCount;
 
@@ -29,7 +29,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong,nullable) MSGroupInfo *chatroomInfo;
 
 /// 聊天室最后一条可展示的消息，用于会话列表的展示
-@property(nonatomic,strong,readonly,nullable) MSIMElem *last_show_msg;
+@property(nonatomic,strong,readonly,nullable) MSIMMessage *last_show_msg;
+
+/// 根据msg_id查找缓存的这条消息
+- (nullable MSIMMessage *)searchMessageWithMsgID:(NSInteger)msg_id;
 
 @end
 

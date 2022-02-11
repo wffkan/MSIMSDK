@@ -26,21 +26,21 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 /// 发送聊天室消息
-/// @param elem 消息体
+/// @param message 消息体
 /// @param room_id 聊天室id
 /// @param success 发送成功，返回消息的唯一标识ID
 /// @param failed 发送失败
-- (void)sendChatRoomMessage:(MSIMElem *)elem
+- (void)sendChatRoomMessage:(MSIMMessage *)message
                    toRoomID:(NSString *)room_id
                   successed:(void(^)(NSInteger msg_id))success
                      failed:(MSIMFail)failed;
 
 /// 聊天室消息重发
-/// @param elem 消息体
+/// @param message 消息体
 /// @param room_id 聊天室id
 /// @param success 发送成功，返回消息的唯一标识ID
 /// @param failed 发送失败
-- (void)resendChatRoomMessage:(MSIMElem *)elem
+- (void)resendChatRoomMessage:(MSIMMessage *)message
                      toRoomID:(NSString *)room_id
                     successed:(void(^)(NSInteger msg_id))success
                        failed:(MSIMFail)failed;
@@ -132,8 +132,6 @@ NS_ASSUME_NONNULL_BEGIN
                  successed:(MSIMSucc)success
                     failed:(MSIMFail)failed;
 
-///比对update_time与服务器同步更新用户信息
-//- (void)synchronizeProfiles:(NSMutableArray<NSNumber *> *)uids room_id:(NSInteger)room_id;
 
 @end
 

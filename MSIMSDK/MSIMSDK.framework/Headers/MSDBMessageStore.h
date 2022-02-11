@@ -8,7 +8,7 @@
  消息存储实行分库分表制，每一个对话单独存一张表，表名规则：个人对话表名：message_user_123 群对话表名：message_group_123
  */
 #import <MSIMSDK/MSDBBaseStore.h>
-#import <MSIMSDK/MSIMElem.h>
+#import <MSIMSDK/MSIMMessage.h>
 
 
 NS_ASSUME_NONNULL_BEGIN
@@ -16,10 +16,10 @@ NS_ASSUME_NONNULL_BEGIN
 @interface MSDBMessageStore : MSDBBaseStore
 
 ///向数据库中添加一条记录
-- (void)addMessage:(MSIMElem *)elem;
+- (void)addMessage:(MSIMMessage *)message;
 
 ///向数据库中添加批量记录
-- (void)addMessages:(NSArray<MSIMElem *> *)elems;
+- (void)addMessages:(NSArray<MSIMMessage *> *)messages;
 
 ///将表中所有消息id <= last_msg_id标记为已读
 - (BOOL)markMessageAsRead:(NSInteger)last_msg_id partnerID:(NSString *)partnerID;
@@ -28,10 +28,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (BOOL)updateMessageRevoke:(NSInteger)msg_id partnerID:(NSString *)partnerID;
 
 ///取最后一条msg_id
-- (MSIMElem *)lastMessageID:(NSString *)partner_id;
+- (MSIMMessage *)lastMessageID:(NSString *)partner_id;
 
 ///取最后一条可显示的消息
-- (MSIMElem *)lastShowMessage:(NSString *)partner_id;
+- (MSIMMessage *)lastShowMessage:(NSString *)partner_id;
 
 /// 分页获取聊天记录
 /// @param partnerID 对方Uid
@@ -41,16 +41,16 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)messageByPartnerID:(NSString *)partnerID
              last_msg_sign:(NSInteger)last_msg_sign
                      count:(NSInteger)count
-                  complete:(void(^)(NSArray<MSIMElem *> *data,BOOL hasMore))complete;
+                  complete:(void(^)(NSArray<MSIMMessage *> *data,BOOL hasMore))complete;
 
 
-- (void)requestHistoryMessageFromEnd:(NSInteger)msgEnd toStart:(NSInteger)msgStart partner_Id:(NSString *)partner_id result:(void(^)(NSArray<MSIMElem *> *elems))result;
+- (void)requestHistoryMessageFromEnd:(NSInteger)msgEnd toStart:(NSInteger)msgStart partner_Id:(NSString *)partner_id result:(void(^)(NSArray<MSIMMessage *> *messages))result;
 
 ///根据msg_id查询消息
-- (MSIMElem *)searchMessage:(NSString *)partner_id msg_id:(NSInteger)msg_id;
+- (MSIMMessage *)searchMessage:(NSString *)partner_id msg_id:(NSInteger)msg_id;
 
 ///根据msg_sign查询消息
-- (MSIMElem *)searchMessage:(NSString *)partner_id msg_sign:(NSInteger)msg_sign;
+- (MSIMMessage *)searchMessage:(NSString *)partner_id msg_sign:(NSInteger)msg_sign;
 
 ///本地删除消息
 - (BOOL)deleteFromLocalWithMsg_sign:(NSInteger)msg_sign partner_id:(NSString *)partner_id;

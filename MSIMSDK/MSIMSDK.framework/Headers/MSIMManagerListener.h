@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @class MSIMConversation;
-@class MSIMElem;
+@class MSIMMessage;
 @class MSProfileInfo;
 @class MSIMMessageReceipt;
 @class MSGroupEvent;
@@ -77,21 +77,18 @@ NS_ASSUME_NONNULL_BEGIN
 @required
 
 /// 收到新消息（除了信令消息）
-- (void)onNewMessages:(NSArray<MSIMElem *> *)msgs;
+- (void)onNewMessages:(NSArray<MSIMMessage *> *)msgs;
 
 /// 收到删除的消息
 - (void)onDeleteMessages:(NSArray<NSNumber *> *)msg_ids;
 
 /// 收到信令消息
-- (void)onRecieveSignalMessages:(NSArray<MSIMElem *> *)msgs;
+- (void)onRecieveSignalMessages:(NSArray<MSIMMessage *> *)msgs;
 
 /**
- *  消息发送状态变化通知
+ *  消息发生变化通知（包括发送状态，撤回等等）
  */
-- (void)onMessageUpdateSendStatus:(MSIMElem *)elem;
-
-///收到一条对方撤回的消息
-- (void)onRevokeMessage:(MSIMElem *)elem;
+- (void)onMessageUpdate:(MSIMMessage *)message;
 
 ///收到消息已读回执（仅单聊有效） 
 - (void)onRecvC2CReadReceipt:(MSIMMessageReceipt *)receipt;
@@ -109,16 +106,13 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)onChatRoomConvUpdate;
 
 /// 收到新消息（除了信令消息）
-- (void)onNewChatRoomMessages:(NSArray<MSIMElem *> *)msgs;
-
-///收到一条对方撤回的消息
-- (void)onChatroomRevokeMessage:(MSIMElem *)elem;
+- (void)onNewChatRoomMessages:(NSArray<MSIMMessage *> *)msgs;
 
 /// 收到删除的消息
 - (void)onChatRoomDeleteMessages:(NSArray<NSNumber *> *)msg_ids;
 
 /// 消息发送状态变化通知
-- (void)onChatRoomMessageUpdateSendStatus:(MSIMElem *)elem;
+- (void)onChatRoomMessageUpdate:(MSIMMessage *)message;
 
 /// 聊天室事件通知
 - (void)onNewChatRoomEvent:(MSGroupEvent *)event;

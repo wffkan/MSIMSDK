@@ -37,7 +37,7 @@ FOUNDATION_EXPORT const unsigned char MSIMSDKVersionString[];
 #import <MSIMSDK/MSIMManager+Demo.h>
 #import <MSIMSDK/MSIMConst.h>
 #import <MSIMSDK/IMSDKConfig.h>
-#import <MSIMSDK/MSIMElem.h>
+#import <MSIMSDK/MSIMMessage.h>
 #import <MSIMSDK/MSIMTools.h>
 #import <MSIMSDK/MSIMErrorCode.h>
 #import <MSIMSDK/MSUploadMediator.h>

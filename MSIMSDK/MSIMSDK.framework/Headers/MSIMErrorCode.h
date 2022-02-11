@@ -47,6 +47,8 @@ enum ERROR_CODE {
     ERR_IM_TEXT_MAX_ERROR                       = 9003,    ///< 文本消息长度超过限制
     ERR_IM_IMAGE_TYPE_ERROR                     = 9004,    ///<图片类型不支持
     ERR_IM_IMAGE_MAX_ERROR                      = 9005,    ///<图片大小超过限制
+    ERR_IM_VOICE_MAX_ERROR                      = 9006,    ///<音频大小超过限制
+    ERR_IM_VIDEO_MAX_ERROR                      = 9007,    ///<视频大小超过限制
 };
 
 #endif /* MSIMErrorCode_h */

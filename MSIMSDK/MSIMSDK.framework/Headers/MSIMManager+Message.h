@@ -5,7 +5,7 @@
 //  Created by benny wang on 2021/2/26.
 //
 #import <MSIMSDK/MSIMManager.h>
-#import <MSIMSDK/MSIMElem.h>
+#import <MSIMSDK/MSIMMessage.h>
 
 
 
@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @class ChatR;
 
 /// 获取历史消息成功回调
-typedef void (^BFIMMessageListSucc)(NSArray<MSIMElem *> * msgs,BOOL isFinished);
+typedef void (^BFIMMessageListSucc)(NSArray<MSIMMessage *> * msgs,BOOL isFinished);
 
 @interface MSIMManager (Message)
 
@@ -24,42 +24,55 @@ typedef void (^BFIMMessageListSucc)(NSArray<MSIMElem *> * msgs,BOOL isFinished);
 //
 /////////////////////////////////////////////////////////////////////////////////
 /** 创建文本消息 文本最大支持 8k*/
-- (MSIMTextElem *)createTextMessage:(NSString *)text;
+- (MSIMMessage *)createTextMessage:(NSString *)text;
 
-/** 创建图片消息
+/** 创建图片消息（图片文件最大支持 28 MB）
     如果是系统相册拿的图片，需要先把图片导入 APP 的目录下
+    identifierID  资源的唯一标识，用于重复图片附件上传去重。可以为空
  */
-- (MSIMImageElem *)createImageMessage:(MSIMImageElem *)elem;
+- (MSIMMessage *)createImageMessage:(NSString *)imagePath identifierID:(nullable NSString *)identifierID;
 
-/** 创建音频消息
+/** 创建语音消息（语音文件最大支持 28 MB）
+ 参数
+ duration    音频时长，单位 s
  */
-- (MSIMVoiceElem *)createVoiceMessage:(MSIMVoiceElem *)elem;
+- (MSIMMessage *)createVoiceMessage:(NSString *)audioFilePath duration:(NSInteger)duration;
 
 
-/** 创建视频消息
-    如果是系统相册拿的视频，需要先把视频导入 APP 的目录下
+/** 创建视频消息（视频文件最大支持 100 MB）
+ 参数
+ type    视频类型，如 mp4 mov 等
+ duration    视频时长，单位 s
+ snapshotPath    视频封面文件路径
+ identifierID  资源的唯一标识，用于重复视频附件上传去重。可以为空
  */
-- (MSIMVideoElem *)createVideoMessage:(MSIMVideoElem *)elem;
+- (MSIMMessage *)createVideoMessage:(NSString *)videoFilePath
+                               type:(NSString *)type
+                           duration:(NSInteger)duration
+                       snapshotPath:(NSString *)snapshotPath
+                       identifierID:(nullable NSString *)identifierID;
 
 /** 创建位置消息
  */
-- (MSIMLocationElem *)createLocationMessage:(MSIMLocationElem *)elem;
+- (MSIMMessage *)createLocationMessage:(MSIMLocationElem *)elem;
 
 
 /** 创建自定义表情消息
  */
-- (MSIMEmotionElem *)createEmotionMessage:(MSIMEmotionElem *)elem;
+- (MSIMMessage *)createEmotionMessage:(MSIMEmotionElem *)elem;
 
 
 /** 创建自定义消息,如果不走推送，pushExt字段可以传nil */
-- (MSIMCustomElem *)createCustomMessage:(NSString *)jsonStr option:(MSIMCustomOption)option pushExt:(nullable MSIMPushInfo *)pushExt;
+- (MSIMMessage *)createCustomMessage:(NSString *)jsonStr
+                                 option:(MSIMCustomOption)option
+                                pushExt:(nullable MSIMPushInfo *)pushExt;
 
 /// 发送单聊消息
-/// @param elem 消息体
+/// @param message 消息体
 /// @param reciever 接收者Uid
 /// @param success 发送成功，返回消息的唯一标识ID
 /// @param failed 发送失败
-- (void)sendC2CMessage:(MSIMElem *)elem
+- (void)sendC2CMessage:(MSIMMessage *)message
             toReciever:(NSString *)reciever
              successed:(void(^)(NSInteger msg_id))success
                 failed:(MSIMFail)failed;
@@ -72,17 +85,17 @@ typedef void (^BFIMMessageListSucc)(NSArray<MSIMElem *> * msgs,BOOL isFinished);
 /// @param success 撤回成功
 /// @param failed 撤回失败
 - (void)revokeMessage:(NSInteger)msg_id
-           toReciever:(NSInteger)reciever
+           toReciever:(NSString *)reciever
             successed:(MSIMSucc)success
                failed:(MSIMFail)failed;
 
 
 /// 单聊消息重发
-/// @param elem 消息体
+/// @param message 消息体
 /// @param reciever 接收者Uid
 /// @param success 发送成功，返回消息的唯一标识ID
 /// @param failed 发送失败
-- (void)resendC2CMessage:(MSIMElem *)elem
+- (void)resendC2CMessage:(MSIMMessage *)message
               toReciever:(NSString *)reciever
                successed:(void(^)(NSInteger msg_id))success
                   failed:(MSIMFail)failed;

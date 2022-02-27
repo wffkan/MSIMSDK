@@ -70,6 +70,8 @@ typedef NS_ENUM(NSInteger, XMChatProtoType) {
     XMChatProtoTypeRecieveGroupManagerAction = 36,//群的管理操作
     XMChatProtoTypeGroupMessageRevoke = 37,//群消息撤回
     XMChatProtoTypeGroupTipEvent = 38,//群类显示的提示性事件小字，如果GroupEvent中，附带reason，在提示小字后面需加上reason
+    XMChatProtoTypeChatActionRequest = 39,//发送指令消息
+
     
     XMChatProtoTypeProfileOnline = 50,//通知客户端用户上线事件
     XMChatProtoTypeProfileOffline = 52,//通知客户端用户下线事件
@@ -128,7 +130,11 @@ typedef NS_ENUM(NSInteger ,MSIMMessageType){
     
     MSIM_MSG_TYPE_REVOKE = 31,//撤回消息
     
-    MSIM_MSG_TYPE_RECALL = 64,//消息撤回
+    MSIM_MSG_TYPE_RECALL_ACTION = 64,//消息撤回指令
+    
+    MSIM_MSG_TYPE_DELETE = 67,//被删除消息（可能是阅后即焚已读后产生）
+    
+    MSIM_MSG_TYPE_SNAP_ACTION = 70,//阅后即焚指令
     
     MSIM_MSG_TYPE_CUSTOM_SIGNAL = 240,//自定义消息（不生成消息，仅作为信号传递）
     

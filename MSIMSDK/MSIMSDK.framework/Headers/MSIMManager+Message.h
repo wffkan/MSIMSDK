@@ -67,6 +67,8 @@ typedef void (^BFIMMessageListSucc)(NSArray<MSIMMessage *> * msgs,BOOL isFinishe
                                  option:(MSIMCustomOption)option
                                 pushExt:(nullable MSIMPushInfo *)pushExt;
 
+
+
 /// 发送单聊消息
 /// @param message 消息体
 /// @param reciever 接收者Uid
@@ -120,7 +122,18 @@ typedef void (^BFIMMessageListSucc)(NSArray<MSIMMessage *> * msgs,BOOL isFinishe
 
 ///删除消息
 ///只做本地删除，卸载重装后从服务器仍能拉到此消息
-- (BOOL)deleteMessage:(NSInteger)msg_sign user_id:(NSString *)user_id;
+- (BOOL)deleteMessageFromLocal:(MSIMMessage *)message;
+
+/**
+ *  收到阅后即焚消息已读
+ *
+ *  @param message  阅后即焚消息
+ *  @param success 操作成功
+ *  @param failed 操作失败
+ */
+- (void)readSnapchat:(MSIMMessage *)message
+           successed:(nullable MSIMSucc)success
+              failed:(nullable MSIMFail)failed;
 
 @end
 

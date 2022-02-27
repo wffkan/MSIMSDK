@@ -27,6 +27,9 @@ NS_ASSUME_NONNULL_BEGIN
 ///标记某一条消息为撤回消息
 - (BOOL)updateMessageRevoke:(NSInteger)msg_id partnerID:(NSString *)partnerID;
 
+///收到对阅后即焚消息已读的指令，将消息表中对应的消息标记为删除
+- (BOOL)updateMessageSnapchat:(NSInteger)msg_id partnerID:(NSString *)partnerID;
+
 ///取最后一条msg_id
 - (MSIMMessage *)lastMessageID:(NSString *)partner_id;
 

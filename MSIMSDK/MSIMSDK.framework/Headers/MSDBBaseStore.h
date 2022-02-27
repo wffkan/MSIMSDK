@@ -22,9 +22,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (BOOL)createTable:(NSString*)tableName withSQL:(NSString*)sqlString;
 
 /**
-*  判断表中是否存在该字段，如果不存在则添加.   字段类型： TXT
+*  判断表中是否存在该字段，如果不存在则添加.   字段类型： TXT,
 */
-- (BOOL)inertColumnInTable:(NSString *)tableName columnName:(NSString *)columnName;
+- (BOOL)inertColumnInTable:(NSString *)tableName columnName:(NSString *)columnName columnType:(NSString *)type;
 
 /**
  *  执行带数组参数的sql语句 (增，删，改)
@@ -45,6 +45,11 @@ NS_ASSUME_NONNULL_BEGIN
  *  执行查询指令
  */
 - (void)excuteQuerySQL:(NSString*)sqlStr resultBlock:(void(^)(FMResultSet * rsSet))resultBlock;
+
+/**
+ *  判断表是否存在
+ */
+- (BOOL)tableExists:(NSString *)tableName;
 
 @end
 

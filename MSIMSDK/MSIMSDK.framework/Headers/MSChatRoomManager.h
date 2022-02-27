@@ -34,6 +34,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// 根据msg_id查找缓存的这条消息
 - (nullable MSIMMessage *)searchMessageWithMsgID:(NSInteger)msg_id;
 
+/// 删除缓存的某条消息
+- (void)removeMessage:(MSIMMessage *)message;
+
 @end
 
 NS_ASSUME_NONNULL_END

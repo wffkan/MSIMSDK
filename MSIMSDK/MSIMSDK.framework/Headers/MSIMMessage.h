@@ -38,6 +38,9 @@ NS_ASSUME_NONNULL_BEGIN
 /** 消息状态*/
 @property(nonatomic,assign) MSIMMessageStatus sendStatus;
 
+/** 消息是否为阅后即焚*/
+@property(nonatomic,assign) BOOL isSnapChat;
+
 /** 消息发送失败错误码*/
 @property(nonatomic,assign) NSInteger code;
 

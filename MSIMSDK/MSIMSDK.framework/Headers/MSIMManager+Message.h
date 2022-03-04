@@ -68,6 +68,10 @@ typedef void (^BFIMMessageListSucc)(NSArray<MSIMMessage *> * msgs,BOOL isFinishe
                                 pushExt:(nullable MSIMPushInfo *)pushExt;
 
 
+/** 创建走voip通道的消息 */
+- (MSIMMessage *)createVoipMessage:(NSString *)jsonStr
+                            option:(MSIMCustomOption)option
+                           pushExt:(nullable MSIMPushInfo *)pushExt;
 
 /// 发送单聊消息
 /// @param message 消息体

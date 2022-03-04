@@ -171,6 +171,8 @@ typedef NS_ENUM(NSUInteger, MSIMCustomOption) {
     IMCUSTOM_UNREADCOUNT_RECALL = 247,         //计入未读数，也可撤回。
 };
 
+#define kApnsTokenKey @"ms_device_token"
+#define kVoipTokenKey @"ms_voip_token"
 
 #endif /* MSIMConst_h */
 

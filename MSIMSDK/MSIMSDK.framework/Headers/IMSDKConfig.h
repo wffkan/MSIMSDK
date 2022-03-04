@@ -21,6 +21,9 @@ NS_ASSUME_NONNULL_BEGIN
 /** 会话列表分页拉取数量,默认：50个*/
 @property(nonatomic,assign) NSInteger chatListPageCount;
 
+/** 音视频通话是否走voip推送，默认：不开启*/
+@property(nonatomic,assign) BOOL voipEnable;
+
 /** 指向IM测试服务器 or 正式服务器 .默认为 YES*/
 @property(nonatomic,assign) BOOL isProduct;
 
